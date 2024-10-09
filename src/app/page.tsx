@@ -482,6 +482,9 @@ const Page: React.FC = () => {
         
         
         )}
+        <Typography variant="body2" sx={{ color: 'red', mt: 2 }} >
+          Disclaimer: Enable "Insecure Content" in your browser settings to view the website
+        </Typography>
 
         {/* Pagination Buttons */}
         {results.length > 0 && (
