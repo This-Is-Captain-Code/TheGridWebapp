@@ -51,9 +51,9 @@ const Page: React.FC = () => {
 
   // Dynamic label for the search bar
   const sentences = [
-    "Search 3D Models",
-    "Find Your Perfect Model",
-    "Explore the World of 3D"
+    "Free 3D for All",
+    "Google For 3D",
+    "Explore the World of 10 Million+ Free 3D Assets"
   ];
   const typingSpeed = 100; // Speed in milliseconds
   const pauseDuration = 2000; // Pause between sentences in milliseconds
@@ -116,7 +116,7 @@ const Page: React.FC = () => {
 
   // Function to handle downloading a 3D model by UID
   const handleDownload = (uid: string) => {
-    const downloadUrl = `${process.env.NEXT_PUBLIC_BACKEND_URL || 'http://35.154.167.42:8080'}/${uid}`;
+    const downloadUrl = `http://35.154.167.42:8080/download_model/${uid}`;
     window.open(downloadUrl, '_blank');
   };
 
@@ -168,7 +168,7 @@ const Page: React.FC = () => {
 
     try {
       // Fetch metadata for the 3D model from the backend
-      const response = await axios.post(`${process.env.NEXT_PUBLIC_BACKEND_URL || 'http://35.154.167.42:8080'}/mint_nft`, {
+      const response = await axios.post('http://35.154.167.42:8080/mint_nft', {
         uid: uid,
         wallet: publicKey.toBase58()  // User's wallet public address
       });
